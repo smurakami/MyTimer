@@ -38,6 +38,9 @@
 
 -(void)start:(NSString *)string
 {
+    if(!string){
+        string = @"";
+    }
     self.start_date = [NSDate date];
     self.prev_date = nil;
     self.title = string;
@@ -45,7 +48,7 @@
 
 -(void)start
 {
-    [self start:@""];
+    [self start:nil];
 }
 
 -(void)rap:(NSString *)string
@@ -60,7 +63,7 @@
 
 -(void)rap
 {
-    [self rap:Nil];
+    [self rap:nil];
 }
 
 -(void)interval:(NSString *)string
@@ -85,7 +88,6 @@
 -(void)interval
 {
     [self interval:nil];
-    
 }
 
 -(void)finish:(NSString *)string
