@@ -15,6 +15,8 @@
 -(void)start;
 -(void)rap:(NSString *)string;
 -(void)rap;
+-(void)interval:(NSString *)string;
+-(void)interval;
 -(void)finish;
 -(void)finish:(NSString *)format;
 @end

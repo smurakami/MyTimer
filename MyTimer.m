@@ -78,9 +78,9 @@
     NSDate * current_date = [NSDate date];
     NSTimeInterval interval = [current_date timeIntervalSinceDate:prev_date];
     if(string){
-        NSLog(@"MyTimer: rap at %lf sec (%@ - %@)", interval, self.title, string);
+        NSLog(@"MyTimer:   interval in %lf sec (%@ - %@)", interval, self.title, string);
     }else{
-        NSLog(@"MyTimer: rap at %lf sec (%@)", interval, self.title);
+        NSLog(@"MyTimer:   interval in %lf sec (%@)", interval, self.title);
     }
     self.prev_date = current_date;
 }
