@@ -65,12 +65,21 @@
 
 -(void)interval:(NSString *)string
 {
-    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self.start_date];
+    NSDate * prev_date;
+    if (self.prev_date){
+        prev_date = self.prev_date;
+    }else{
+        prev_date = self.start_date;
+    }
+    
+    NSDate * current_date = [NSDate date];
+    NSTimeInterval interval = [current_date timeIntervalSinceDate:prev_date];
     if(string){
         NSLog(@"MyTimer: rap at %lf sec (%@ - %@)", interval, self.title, string);
     }else{
         NSLog(@"MyTimer: rap at %lf sec (%@)", interval, self.title);
     }
+    self.prev_date = current_date;
 }
 
 -(void)interval
